@@ -1,8 +1,3 @@
-Absolutely. Below is the final, clean, professional README you should copy and paste in full.
-This version is grader-safe, interview-ready, and factually accurate based on the curl proofs you just ran.
-
-You can replace your entire README.md with this as-is.
-
 tech-challenge-1-ecs-jenkins
 
 Node.js Frontend & Backend Deployment on AWS ECS (Fargate) with Terraform and Jenkins CI/CD
