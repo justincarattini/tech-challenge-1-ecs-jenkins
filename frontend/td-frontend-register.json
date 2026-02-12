@@ -1,0 +1,39 @@
+{
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "memory": "512",
+  "family": "tc1-frontend",
+  "volumes": [],
+  "containerDefinitions": [
+    {
+      "name": "frontend",
+      "image": "253068979882.dkr.ecr.us-east-2.amazonaws.com/tc1-frontend:latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/tc1-frontend",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "systemControls": []
+    }
+  ],
+  "networkMode": "awsvpc",
+  "placementConstraints": [],
+  "executionRoleArn": "arn:aws:iam::253068979882:role/ecsTaskExecutionRole",
+  "cpu": "256"
+}

@@ -1,0 +1,97 @@
+{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:listener-rule/app/tc1-alb/329239bdef887b48/25ce720419b6fa6c/73680126670e1da5",
+            "Priority": "90",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/api"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/api"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-backend-tg-live/7f2f750b8269d35a",
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-backend-tg-live/7f2f750b8269d35a",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:listener-rule/app/tc1-alb/329239bdef887b48/25ce720419b6fa6c/5458510a11ff18be",
+            "Priority": "100",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/api/*"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/api/*"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-backend-tg-live/7f2f750b8269d35a",
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-backend-tg-live/7f2f750b8269d35a",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:listener-rule/app/tc1-alb/329239bdef887b48/25ce720419b6fa6c/133c7227fac4781e",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-frontend-tg/f978bafa0aceecc3",
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:253068979882:targetgroup/tc1-frontend-tg/f978bafa0aceecc3",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": true
+        }
+    ]
+}
